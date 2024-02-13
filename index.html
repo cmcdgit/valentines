@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Marie <3</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+
+			<span class="string">Marie,</span><br/>
+			<span class="string"></span><br/>
+			<span class="string">Happy Valentine's Day, 2024</span><br/>
+			<span class="string"></span><br/>
+			<span class="string">They seem to be coming around quicker than ever...</span><br/>
+			<span class="string"></span><br/> 
+			<span class="string">I had a blast in Dublin with you at the weekend</span><br/>
+			<span class="string">and I'm already looking forward to our next trip away</span><br/>
+			<span class="string">...or to when all the people we invited to Donegal come to stay :)</span><br/>
+			<span class="string"></span><br/>
+			<span class="string">And thanks for staying awake for the full journey</span><br/>
+			<span class="string">...both ways</span><br/>
+			<span class="string"></span><br/>
+			<span class="string">#impressed</span><br/>
+			<span class="string"></span><br/>
+			<span class="string">Here's to the future, whatever it brings...</span><br/>
+			<span class="string"></span><br/>
+			<span class="string">Love always</span><br/>
+			<span class="string">...to the moon and back,</span><br/>
+			<span class="string"></span><br/>
+			<span class="string">Ciaran Xxx</span><br/>
+
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Marie, you've been my Valentine for...
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">Who's counting...<br/>
+					<div class="signature">- Ciaran Xxx</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+
+	together.setFullYear(2017, 6, 5);
+	together.setHours(3);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
